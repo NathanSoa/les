@@ -1,19 +1,37 @@
 package br.com.nathan.ecommerce.main.modules.customer.validator;
 
+import br.com.nathan.ecommerce.main.core.exceptions.MessageResolver;
 import br.com.nathan.ecommerce.main.core.interfaces.Validator;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+import java.util.*;
+
+import static br.com.nathan.ecommerce.main.config.constants.ValidationConstants.CPF_FORMATTED;
+import static br.com.nathan.ecommerce.main.config.constants.ValidationConstants.CPF_UNFORMATTED;
+
+@Component
+@AllArgsConstructor
+@Qualifier("cpfValidator")
 public class CpfValidator implements Validator<String> {
 
-    public static final String FORMATTED = "(\\d{3})[.](\\d{3})[.](\\d{3})-(\\d{2})";
-    public static final String UNFORMATTED = "(\\d{3})(\\d{3})(\\d{3})(\\d{2})";
+    private final MessageResolver messageResolver;
 
     @Override
-    public void validate(String cpf) {
+    public Map<String, List<String>> validate(String cpf) {
+        var codes = new ArrayList<String>();
+
         if(cpf == null || cpf.isBlank() || cpf.isEmpty()) {
-            throw new IllegalArgumentException("customer.cpf.required");
+            codes.add("customer.cpf.required");
+        } else
+        if (this.isInvalid(cpf)) {
+            codes.add("customer.cpf.invalid");
         }
-        if (!(cpf.matches(FORMATTED) || cpf.matches(UNFORMATTED))) {
-            throw new IllegalArgumentException("customer.cpf.invalid");
-        }
+        return Map.of("cpf", messageResolver.resolve(codes));
+    }
+
+    private boolean isInvalid(String cpf) {
+        return !(cpf.matches(CPF_UNFORMATTED) || cpf.matches(CPF_FORMATTED));
     }
 }
