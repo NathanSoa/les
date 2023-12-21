@@ -21,16 +21,23 @@ public class CustomerToCustomerEntity implements Mapper<Customer, CustomerEntity
 
     @Override
     public CustomerEntity map(Customer raw) {
-        return  new CustomerEntity()
+        var customer = new CustomerEntity()
                     .withId(raw.getId())
                     .withName(raw.getName().getValue())
                     .withEmail(raw.getEmail().getValue())
                     .withCpf(raw.getCpf().getValue())
                     .withPhone(raw.getPhone().getValue())
                     .withPassword(raw.getPassword().getValue())
-                    .withAddress(raw.getAddress().stream().map(addressMapper::map).toList())
-                    .withCard(raw.getCard().stream().map(cardMapper::map).toList())
                     .withActive(TrueIfNull(raw.getActive()));
 
+        var addresses = raw.getAddress().stream().map(addressMapper::map).toList();
+        addresses.forEach(address -> address.setCustomerEntity(customer));
+
+        var cards = raw.getCard().stream().map(cardMapper::map).toList();
+        cards.forEach(card -> card.setCustomerEntity(customer));
+
+        return customer
+                    .withAddress(addresses)
+                    .withCard(cards);
     }
 }
