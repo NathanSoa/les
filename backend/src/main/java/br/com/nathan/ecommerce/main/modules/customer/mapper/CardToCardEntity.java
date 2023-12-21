@@ -10,12 +10,14 @@ public class CardToCardEntity implements Mapper<Card, CardEntity> {
 
     @Override
     public CardEntity map(Card raw) {
-        return new CardEntity()
+        var card = new CardEntity()
                     .withNumber(raw.getNumber())
                     .withName(raw.getName())
                     .withFlag(raw.getFlag())
                     .withType(raw.getType())
                     .withSecurityCode(raw.getSecurityCode())
                     .withMain(raw.getMain());
+        card.setActive(true);
+        return card;
     }
 }

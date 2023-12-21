@@ -12,7 +12,7 @@ public class AddressToAddressEntity implements Mapper<Address, AddressEntity> {
 
     @Override
     public AddressEntity map(Address raw) {
-        return new AddressEntity()
+        var address = new AddressEntity()
                 .withAlias(raw.getAlias())
                 .withCity(raw.getCity())
                 .withComplement(raw.getComplement())
@@ -22,6 +22,8 @@ public class AddressToAddressEntity implements Mapper<Address, AddressEntity> {
                 .withStreet(raw.getStreet())
                 .withZipCode(raw.getZipCode())
                 .withStreetPurpose(transformStreetPurpose(raw.getStreetPurpose()));
+        address.setActive(true);
+        return address;
     }
 
     private String transformStreetPurpose(List<String> streetPurpose) {
