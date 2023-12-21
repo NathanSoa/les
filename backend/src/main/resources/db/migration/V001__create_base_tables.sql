@@ -24,7 +24,7 @@ state          varchar(255) not null,
 street         varchar(255) not null,
 street_purpose varchar(255) not null,
 zip_code       varchar(255) not null,
-customer_id    bigint not null,
+customer_id    bigint,
 
 primary key (id)
 );
@@ -44,7 +44,7 @@ number         varchar(255) not null,
 security_code  varchar(255) not null,
 type           varchar(255) not null,
 name           varchar(255) not null,
-customer_id    bigint not null,
+customer_id    bigint,
 
 primary key (id)
 );
