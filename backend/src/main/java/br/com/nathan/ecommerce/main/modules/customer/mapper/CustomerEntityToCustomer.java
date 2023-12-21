@@ -20,11 +20,11 @@ public class CustomerEntityToCustomer implements Mapper<CustomerEntity, Customer
         final var customer = Customer.Create();
 
         customer.setId(raw.getId());
-        customer.setName(Name.withoutValidation(raw.getName()));
-        customer.setEmail(Email.withoutValidation(raw.getEmail()));
-        customer.setCpf(CPF.withoutValidation(raw.getCpf()));
-        customer.setPhone(Phone.withoutValidation(raw.getPhone()));
-        customer.setPassword(Password.withoutValidation(raw.getPassword()));
+        customer.setName(Name.Create(raw.getName()));
+        customer.setEmail(Email.Create(raw.getEmail()));
+        customer.setCpf(CPF.Create(raw.getCpf()));
+        customer.setPhone(Phone.Create(raw.getPhone()));
+        customer.setPassword(Password.Create(raw.getPassword()));
         customer.setActive(raw.getActive());
         customer.setAddress(raw.getAddressEntity().stream().map(addressMapper::map).toList());
         customer.setCard(raw.getCardEntity().stream().map(cardMapper::map).toList());
