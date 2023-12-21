@@ -26,27 +26,27 @@ public class Customer {
     }
 
     public Customer withName(String name) {
-        this.name = Name.withValidation(name);
+        this.name = Name.Create(name);
         return this;
     }
 
     public Customer withEmail(String email) {
-        this.email = Email.withValidation(email);
+        this.email = Email.Create(email);
         return this;
     }
 
     public Customer withCPF(String cpf) {
-        this.cpf = CPF.withValidation(cpf);
+        this.cpf = CPF.Create(cpf);
         return this;
     }
 
     public Customer withPhone(String phone) {
-        this.phone = Phone.withValidation(phone);
+        this.phone = Phone.Create(phone);
         return this;
     }
 
     public Customer withPassword(String password) {
-        this.password = Password.withValidation(password);
+        this.password = Password.Create(password);
         return this;
     }
 
