@@ -41,7 +41,6 @@ public class CustomerService extends AbstractService<Customer, CustomerEntity> {
     @Override
     public Customer update(Customer customer, Long id) {
         businessRules.process(customer);
-        validator.validate(customer);
         var dbCustomer = findById(id);
         customer.setPassword(dbCustomer.getPassword());
         return super.update(customer, id);
