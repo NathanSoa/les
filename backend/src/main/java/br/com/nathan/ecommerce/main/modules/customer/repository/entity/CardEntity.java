@@ -6,6 +6,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -30,11 +31,11 @@ public class CardEntity extends BaseEntity {
     @NotBlank
     private String flag;
 
-    @NotBlank
+    @NotNull
     private Boolean main;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id", insertable = false, updatable = false)
     private CustomerEntity customerEntity;
 
     public CardEntity withType(String type) {

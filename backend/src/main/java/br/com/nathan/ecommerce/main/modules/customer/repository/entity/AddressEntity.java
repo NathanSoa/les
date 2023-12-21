@@ -43,7 +43,7 @@ public class AddressEntity extends BaseEntity {
     private String streetPurpose;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer_id", insertable = false, updatable = false)
     private CustomerEntity customerEntity;
 
     public AddressEntity withAlias(String alias) {
