@@ -10,7 +10,7 @@ public record CustomerDTO(String name,
                           String password,
                           String cpf,
                           String phone,
-                          List<Address> address,
+                          List<Address> addresses,
                           List<Card> cards,
                           Boolean active) {
 }
