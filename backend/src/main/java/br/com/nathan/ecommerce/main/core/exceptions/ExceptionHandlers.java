@@ -22,8 +22,8 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
     @ExceptionHandler({IllegalArgumentException.class})
     public ResponseEntity<?> handleIllegalArgumentException(IllegalArgumentException e, WebRequest request) {
         var message = messageResolver.resolve(e.getMessage(), request.getLocale());
-        log.info("ERROR: IllegalArgumentException {}", message);
-        log.info(Arrays.toString(e.getStackTrace()));
+        log.error("ERROR: IllegalArgumentException {}", message);
+        log.error(Arrays.toString(e.getStackTrace()));
         var fieldError = new FieldError(e.getMessage(), message);
         return ResponseEntity.badRequest().body(fieldError);
     }
@@ -31,8 +31,8 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
     @ExceptionHandler({EntityNotFoundException.class})
     public ResponseEntity<?> handleEntityNotFound(EntityNotFoundException e, WebRequest request) {
         var message = messageResolver.resolve(e.getMessage(), request.getLocale());
-        log.info("ERROR: EntityNotFoundException {}", message);
-        log.info(Arrays.toString(e.getStackTrace()));
+        log.error("ERROR: EntityNotFoundException {}", message);
+        log.error(Arrays.toString(e.getStackTrace()));
         var fieldError = new FieldError(e.getMessage(), message);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(fieldError);
     }
@@ -40,10 +40,22 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
     @ExceptionHandler({BusinessException.class})
     public ResponseEntity<?> handleBusinessException(BusinessException e, WebRequest request) {
         var message = messageResolver.resolve(e.getMessage(), request.getLocale());
-        log.info("ERROR: BusinessException {}", message);
-        log.info(Arrays.toString(e.getStackTrace()));
+        log.error("ERROR: BusinessException {}", message);
+        log.error(Arrays.toString(e.getStackTrace()));
         var fieldError = new FieldError(e.getMessage(), message);
         return ResponseEntity.badRequest().body(fieldError);
+    }
+
+    @ExceptionHandler({ValidationException.class})
+    public ResponseEntity<?> handleValidationException(ValidationException e, WebRequest request) {
+        var map = e.getErrors();
+        log.error("ERROR: ValidationException");
+        map.keySet().forEach(key -> {
+            log.error("Field: {}", key);
+            map.get(key).forEach(message -> log.error("Message: {}", message));
+        });
+        log.error(Arrays.toString(e.getStackTrace()));
+        return ResponseEntity.badRequest().body(e.getErrors());
     }
 
     private static class FieldError {
