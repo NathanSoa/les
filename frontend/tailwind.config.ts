@@ -11,6 +11,9 @@ const config: Config = {
       gridTemplateColumns: {
         app: 'minmax(16rem, 18rem) 1fr',
       },
+      colors: {
+        'blue-theme': '#2d53da',
+      },
     },
   },
   plugins: [],
