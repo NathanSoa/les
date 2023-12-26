@@ -1,9 +1,9 @@
-import { CircleDollarSignIcon } from 'lucide-react'
+import { AppleLogo } from 'phosphor-react'
 
 interface CompanyLogoProps {
   size: number
 }
 
 export default function CompanyLogo({ size }: CompanyLogoProps) {
-  return <CircleDollarSignIcon size={size} className="text-blue-theme-light" />
+  return <AppleLogo size={size} className="text-blue-theme-light" />
 }
