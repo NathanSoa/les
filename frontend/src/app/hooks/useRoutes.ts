@@ -15,7 +15,7 @@ export const useRoutes = (): Path[] => {
       label: 'Dashboard',
     },
     {
-      path: '/customers',
+      path: '/dashboard/customers',
       icon: User,
       label: 'Customers',
     },
