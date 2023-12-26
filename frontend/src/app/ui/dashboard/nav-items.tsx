@@ -2,7 +2,7 @@ import { useRoutes } from '@/app/hooks/useRoutes'
 import NavItem from '@/app/ui/dashboard/nav-item'
 
 export default function NavItems() {
-  const routes = useRoutes()
+  const routes = useRoutes({ onlyStartsWith: '/dashboard' })
 
   return (
     <ul className="flex w-full flex-col items-center gap-5">
