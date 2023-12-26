@@ -2,6 +2,7 @@
 
 import * as fs from 'fs'
 import * as path from 'path'
+import { Routes } from './Base'
 
 function isDirectory(path: string) {
   return fs.statSync(path).isDirectory()
@@ -25,13 +26,6 @@ function getDirectories(basePath: string, dirPath = ''): string[] {
 
   return directories
 }
-
-export const Base = {
-  SRC: './src/app',
-  APP: './app',
-} as const
-
-type Routes = (typeof Base)[keyof typeof Base]
 
 export const getRoutes = async (base: Routes) => {
   function hasPage(dir: string) {
