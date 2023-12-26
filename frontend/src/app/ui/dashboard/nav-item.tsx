@@ -1,9 +1,7 @@
-'use client'
-
-import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
 import { clsx } from 'clsx'
 import Link from 'next/link'
+import { useTabStyle } from '@/app/hooks/useTabStyle'
 
 interface NavItemProps {
   href: string
@@ -12,10 +10,7 @@ interface NavItemProps {
 }
 
 export default function NavItem({ href, text, icon: Icon }: NavItemProps) {
-  const pathname = usePathname()
-  const isActualTab = href === pathname
-  const liClassName = isActualTab ? 'bg-white text-zinc-700' : 'text-zinc-50'
-  const iconClassName = isActualTab ? 'text-blue-theme' : 'text-zinc-50'
+  const { liClassName, iconClassName } = useTabStyle(href)
 
   return (
     <li
