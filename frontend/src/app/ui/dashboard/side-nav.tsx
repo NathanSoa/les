@@ -1,7 +1,7 @@
 'use client'
 
 import CompanyLogo from '@/app/ui/company-logo'
-import NavItem from '@/app/ui/nav-item'
+import NavItem from '@/app/ui/dashboard/nav-item'
 
 import { HouseLine, User } from 'phosphor-react'
 
