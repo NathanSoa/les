@@ -16,7 +16,7 @@ export default function DashboardLayout({
       <div className="p-3">
         <SideNav />
       </div>
-      <div className="px-5 py-6">{children}</div>
+      <main className="px-5 py-6">{children}</main>
     </div>
   )
 }
