@@ -2,8 +2,6 @@ import { Airplay, Gear, HouseLine, User } from 'phosphor-react'
 import { ElementType, useEffect, useState } from 'react'
 
 import { getRoutes } from '@/app/server/getRoutes'
-import { Base } from '@/app/server/Base'
-
 interface Route {
   path: string
   name: string
@@ -28,7 +26,7 @@ export const useRoutes = (): Path[] => {
   const [routes, setRoutes] = useState<Route[]>([])
 
   useEffect(() => {
-    getRoutes(Base.SRC).then((data) => setRoutes(data))
+    getRoutes().then((data) => setRoutes(data))
   }, [])
 
   return routes.sort(settingsAsLast).map((route) => ({

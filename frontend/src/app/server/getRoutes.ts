@@ -2,7 +2,8 @@
 
 import * as fs from 'fs'
 import * as path from 'path'
-import { Routes } from './Base'
+
+const APP_DIRECTORY = './src/app'
 
 function isDirectory(path: string) {
   return fs.statSync(path).isDirectory()
@@ -27,7 +28,7 @@ function getDirectories(basePath: string, dirPath = ''): string[] {
   return directories
 }
 
-export const getRoutes = async (base: Routes) => {
+export const getRoutes = async () => {
   function hasPage(dir: string) {
     const pagePath = path.join(basePath, dir, 'page.tsx')
     return fs.existsSync(pagePath)
@@ -39,7 +40,7 @@ export const getRoutes = async (base: Routes) => {
     return { name: name.charAt(0).toUpperCase() + name.slice(1), path: route }
   }
 
-  const basePath = path.resolve(base)
+  const basePath = path.resolve(APP_DIRECTORY)
   const directories = getDirectories(basePath)
   const routes = directories.filter(hasPage).map(toRoute)
   return routes
