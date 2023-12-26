@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import SideNav from '@/app/ui/dashboard/side-nav'
 
 export const metadata: Metadata = {
-  title: 'Dashboard | MyApplication',
+  title: 'Dashboard',
 }
 
 export default function DashboardLayout({
@@ -16,7 +16,7 @@ export default function DashboardLayout({
       <div className="p-3">
         <SideNav />
       </div>
-      <div className="px-5 py-3">{children}</div>
+      <div className="px-5 py-6">{children}</div>
     </div>
   )
 }
