@@ -13,6 +13,7 @@ const config: Config = {
       },
       colors: {
         'blue-theme': '#2d53da',
+        'blue-theme-light': '#2de9fa',
       },
     },
   },
