@@ -12,7 +12,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="grid-cols-app grid min-h-screen pt-5">
+    <div className="grid min-h-screen grid-cols-app pt-5">
       <div className="p-3">
         <SideNav />
       </div>
