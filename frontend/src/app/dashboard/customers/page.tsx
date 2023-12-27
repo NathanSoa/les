@@ -2,6 +2,8 @@ import { useRandomColor } from '@/app/hooks/useRandomColor'
 import Breadcrumb from '@/app/ui/breadcrumb'
 import Table from '@/app/ui/table'
 
+import clsx from 'clsx'
+
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -34,8 +36,10 @@ export default function Page() {
         <Table.Header headers={['Name', 'Email', 'Phone']} />
         <Table.Body>
           {customers.map((customer, index) => {
-            const color = getColorAsBackground()
-            const style = 'block rounded-full px-4 py-2 text-white ' + color
+            const style = clsx(
+              'block rounded-full px-4 py-2 text-white',
+              getColorAsBackground(),
+            )
 
             return (
               <Table.Row key={index}>
