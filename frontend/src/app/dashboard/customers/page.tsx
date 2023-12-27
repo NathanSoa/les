@@ -1,9 +1,9 @@
 'use client'
 
-import { useRandomColor } from '@/hooks/useRandomColor'
-import Breadcrumb from '@/ui/breadcrumb'
-import Button from '@/ui/button'
-import Table from '@/ui/table'
+import { useRandomColor } from '@/app/hooks/useRandomColor'
+import Breadcrumb from '@/app/ui/breadcrumb'
+import Button from '@/app/ui/button'
+import Table from '@/app/ui/table'
 
 import clsx from 'clsx'
 import { UserPlus } from 'phosphor-react'

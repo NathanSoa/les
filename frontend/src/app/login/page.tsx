@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { Metadata } from 'next'
 import { Roboto_Serif as RobotoSerif, Roboto } from 'next/font/google'
-import Button from '@/ui/button'
+import Button from '@/app/ui/button'
 
 const robotoSerif = RobotoSerif({
   weight: '500',

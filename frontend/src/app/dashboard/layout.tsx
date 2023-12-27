@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import SideNav from '@/ui/dashboard/side-nav'
+import SideNav from '@/app/ui/dashboard/side-nav'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
