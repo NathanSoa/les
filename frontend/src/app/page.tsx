@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="grid-cols-half grid">
-      <aside className="h-screen bg-gradient-to-b from-sky-400 to-blue-theme text-zinc-50">
+      <aside className="h-screen bg-gradient-to-b  from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
         <h1 className={clsx('p-10 font-medium', roboto.className)}>
           MyCompany
         </h1>
