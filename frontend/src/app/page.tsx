@@ -33,13 +33,45 @@ export default function Home() {
           </span>
         </div>
       </aside>
-      <main
-        className={clsx(
-          'mx-auto px-10 pt-36 text-2xl font-bold text-sky-500',
-          roboto.className,
-        )}
-      >
-        <h2>Login Account</h2>
+      <main className={'mx-auto px-10 pt-36 text-2xl font-bold text-sky-500'}>
+        <h1 className={clsx('text-center', roboto.className)}>Login Account</h1>
+        <form className="flex flex-col gap-5 pt-10 text-base">
+          <div>
+            <label
+              htmlFor="email"
+              className="pb-2 text-sm font-normal text-slate-600"
+            >
+              E-mail
+            </label>
+            <div className="flex h-10 w-80 bg-slate-100 focus-within:outline focus-within:outline-1 focus-within:outline-indigo-400">
+              <div className="w-1 bg-blue-500" />
+              <input
+                type="text"
+                id="email"
+                placeholder="E-mail"
+                className="w-full bg-transparent pl-3 text-slate-600 outline-none placeholder:font-medium"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              htmlFor="password"
+              className="pb-2 text-sm font-normal text-slate-600"
+            >
+              Password
+            </label>
+            <div className="flex h-10 w-80 bg-slate-100 focus-within:outline focus-within:outline-1 focus-within:outline-indigo-400">
+              <div className="w-1 bg-blue-500" />
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                className="w-full bg-transparent pl-3 text-slate-600 outline-none placeholder:font-medium"
+              />
+            </div>
+          </div>
+        </form>
       </main>
     </div>
   )
