@@ -1,9 +1,14 @@
 import clsx from 'clsx'
 import { Metadata } from 'next'
-import { Roboto_Serif as RobotoSerif } from 'next/font/google'
+import { Roboto_Serif as RobotoSerif, Roboto } from 'next/font/google'
 
-const roboto = RobotoSerif({
+const robotoSerif = RobotoSerif({
   weight: '500',
+  subsets: ['latin'],
+})
+
+const roboto = Roboto({
+  weight: '700',
   subsets: ['latin'],
 })
 
@@ -15,7 +20,7 @@ export default function Home() {
   return (
     <div className="grid-cols-half grid">
       <aside className="h-screen bg-gradient-to-b  from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
-        <h1 className={clsx('p-10 font-medium', roboto.className)}>
+        <h1 className={clsx('p-10 font-medium', robotoSerif.className)}>
           MyCompany
         </h1>
         <div className="mt-36 flex flex-col items-center">
@@ -28,7 +33,14 @@ export default function Home() {
           </span>
         </div>
       </aside>
-      <main>Login Account</main>
+      <main
+        className={clsx(
+          'mx-auto px-10 pt-36 text-2xl font-bold text-sky-500',
+          roboto.className,
+        )}
+      >
+        <h2>Login Account</h2>
+      </main>
     </div>
   )
 }
