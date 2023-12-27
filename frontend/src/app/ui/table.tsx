@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import Button from './button'
 
 function TableRoot({ children }: { children: ReactNode }) {
   return (
@@ -37,12 +38,12 @@ function TableRow({ children }: { children: ReactNode }) {
       {children}
       <td className="whitespace-nowrap bg-white py-5">
         <div className="flex justify-start gap-2">
-          <button className="base-button border-green-500 text-green-500 hover:bg-green-600 hover:text-white">
-            Edit
-          </button>
-          <button className="base-button border-red-500 text-red-500 hover:bg-red-700 hover:text-white">
-            Delete
-          </button>
+          <Button.Root className="border-green-500 text-green-500 hover:bg-green-600 hover:text-white">
+            <Button.Label label="Edit" />
+          </Button.Root>
+          <Button.Root className="border-red-500 text-red-500 hover:bg-red-700 hover:text-white">
+            <Button.Label label="Delete" />
+          </Button.Root>
         </div>
       </td>
     </tr>
