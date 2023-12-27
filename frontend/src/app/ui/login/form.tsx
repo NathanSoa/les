@@ -40,7 +40,7 @@ export default function FormLogin() {
           />
         </div>
       </div>
-      <Button.Root className="border-blue-theme bg-blue-700 text-blue-500 hover:bg-blue-500 hover:text-white">
+      <Button.Root className="border-blue-theme text-blue-500 hover:bg-blue-500 hover:text-white">
         <Button.Label label="Login" />
       </Button.Root>
     </form>
