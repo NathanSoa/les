@@ -37,8 +37,12 @@ function TableRow({ children }: { children: ReactNode }) {
       {children}
       <td className="whitespace-nowrap bg-white py-5">
         <div className="flex justify-start gap-2">
-          <button className="rounded-xl bg-green-300 px-10 py-3">Edit</button>
-          <button className="rounded-xl bg-red-300 px-10 py-3">Delete</button>
+          <button className="base-button border-green-500 text-green-500 hover:bg-green-600 hover:text-white">
+            Edit
+          </button>
+          <button className="base-button border-red-500 text-red-500 hover:bg-red-700 hover:text-white">
+            Delete
+          </button>
         </div>
       </td>
     </tr>
