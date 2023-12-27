@@ -1,15 +1,12 @@
+'use client'
+
 import { useRandomColor } from '@/app/hooks/useRandomColor'
 import Breadcrumb from '@/app/ui/breadcrumb'
+import Button from '@/app/ui/button'
 import Table from '@/app/ui/table'
 
 import clsx from 'clsx'
-
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Customers',
-  description: 'Customers page',
-}
+import { UserPlus } from 'phosphor-react'
 
 const customers = [
   {
@@ -31,7 +28,13 @@ export default function Page() {
   return (
     <div>
       <Breadcrumb pageName={'Customers'} homePage="/dashboard" />
-      <h1 className="pb-6 pt-2 text-4xl font-bold">Customers</h1>
+      <div className="flex max-w-7xl justify-between">
+        <h1 className="pb-6 pt-2 text-4xl font-bold">Customers</h1>
+        <Button.Root className="m-2 flex items-center justify-center gap-2 border-blue-theme px-4 py-1 text-blue-theme hover:bg-blue-800 hover:text-white">
+          <Button.Icon icon={<UserPlus size={32} />} />
+          <Button.Label label="Create customer" />
+        </Button.Root>
+      </div>
       <Table.Root>
         <Table.Header headers={['Name', 'Email', 'Phone']} />
         <Table.Body>
