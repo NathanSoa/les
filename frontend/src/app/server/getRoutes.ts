@@ -3,7 +3,16 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-const APP_DIRECTORY = './src/app'
+let APP_DIRECTORY: string
+let PAGE: string
+
+if (process.env.NODE_ENV === 'production') {
+  APP_DIRECTORY = './.next/server/app'
+  PAGE = 'page.js'
+} else {
+  APP_DIRECTORY = './src/app'
+  PAGE = 'page.tsx'
+}
 
 function isDirectory(path: string) {
   return fs.statSync(path).isDirectory()
@@ -30,7 +39,7 @@ function getDirectories(basePath: string, dirPath = ''): string[] {
 
 export const getRoutes = async () => {
   function hasPage(dir: string) {
-    const pagePath = path.join(basePath, dir, 'page.tsx')
+    const pagePath = path.join(basePath, dir, PAGE)
     return fs.existsSync(pagePath)
   }
 
