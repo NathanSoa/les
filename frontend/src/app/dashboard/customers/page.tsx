@@ -23,8 +23,8 @@ const customers = [
 ]
 
 export default function Page() {
-  const getRandomColor = useRandomColor()
   const cellClassName = 'whitespace-nowrap bg-white px-2 py-5'
+  const { getColorAsBackground } = useRandomColor()
 
   return (
     <div>
@@ -34,8 +34,8 @@ export default function Page() {
         <Table.Header headers={['Name', 'Email', 'Phone']} />
         <Table.Body>
           {customers.map((customer, index) => {
-            const color = getRandomColor()
-            const style = `block rounded-full px-4 py-2 ${color}`
+            const color = getColorAsBackground()
+            const style = 'block rounded-full px-4 py-2 text-white ' + color
 
             return (
               <Table.Row key={index}>

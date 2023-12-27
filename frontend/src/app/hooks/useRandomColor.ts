@@ -1,10 +1,11 @@
 export function useRandomColor() {
   const colors = ['red', 'green', 'blue', 'yellow', 'pink', 'purple']
 
-  function getColor() {
+  function getColorAsBackground() {
+    const backgroundColors = colors.map((color) => 'bg-' + color + '-500')
     const randomIndex = Math.floor(Math.random() * colors.length)
-    return `bg-${colors[randomIndex]}-500`
+    return backgroundColors[randomIndex]
   }
 
-  return getColor
+  return { getColorAsBackground }
 }
