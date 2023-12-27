@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { Metadata } from 'next'
 import { Roboto_Serif as RobotoSerif, Roboto } from 'next/font/google'
-import Button from '@/app/ui/button'
+import Button from '@/ui/button'
 
 const robotoSerif = RobotoSerif({
   weight: '500',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="grid-cols-half grid">
+    <div className="grid grid-cols-half">
       <aside className="h-screen bg-gradient-to-b  from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
         <h1 className={clsx('p-10 font-medium', robotoSerif.className)}>
           MyCompany

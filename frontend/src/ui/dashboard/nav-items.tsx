@@ -1,5 +1,5 @@
-import { useRoutes } from '@/app/hooks/useRoutes'
-import NavItem from '@/app/ui/dashboard/nav-item'
+import { useRoutes } from '@/hooks/useRoutes'
+import NavItem from '@/ui/dashboard/nav-item'
 
 export default function NavItems() {
   const routes = useRoutes({ onlyStartsWith: '/dashboard' })

@@ -1,7 +1,7 @@
 import { Airplay, Gear, HouseLine, User } from 'phosphor-react'
 import { ElementType, useEffect, useState } from 'react'
 
-import { getRoutes } from '@/app/server/getRoutes'
+import { getRoutes } from '@/server/getRoutes'
 interface Route {
   path: string
   name: string

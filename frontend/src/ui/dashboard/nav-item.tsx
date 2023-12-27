@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { clsx } from 'clsx'
 import Link from 'next/link'
-import { useTabStyle } from '@/app/hooks/useTabStyle'
+import { useTabStyle } from '@/hooks/useTabStyle'
 
 interface NavItemProps {
   href: string
