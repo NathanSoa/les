@@ -28,18 +28,20 @@ function TableHeader({ headers }: TableHeaderProps) {
 }
 
 function TableBody({ children }: { children: ReactNode }) {
+  return <tbody>{children}</tbody>
+}
+
+function TableRow({ children }: { children: ReactNode }) {
   return (
-    <tbody>
-      <tr>
-        {children}
-        <td className="whitespace-nowrap bg-white py-5">
-          <div className="flex justify-start gap-2">
-            <button className="rounded-xl bg-green-300 px-10 py-3">Edit</button>
-            <button className="rounded-xl bg-red-300 px-10 py-3">Delete</button>
-          </div>
-        </td>
-      </tr>
-    </tbody>
+    <tr>
+      {children}
+      <td className="whitespace-nowrap bg-white py-5">
+        <div className="flex justify-start gap-2">
+          <button className="rounded-xl bg-green-300 px-10 py-3">Edit</button>
+          <button className="rounded-xl bg-red-300 px-10 py-3">Delete</button>
+        </div>
+      </td>
+    </tr>
   )
 }
 
@@ -47,6 +49,7 @@ const Table = {
   Root: TableRoot,
   Header: TableHeader,
   Body: TableBody,
+  Row: TableRow,
 }
 
 export default Table
