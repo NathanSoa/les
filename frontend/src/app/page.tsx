@@ -39,7 +39,7 @@ export default function Home() {
           <div>
             <label
               htmlFor="email"
-              className="pb-2 text-sm font-normal text-slate-600"
+              className="pb-2 text-sm font-normal text-zinc-500"
             >
               E-mail
             </label>
@@ -57,7 +57,7 @@ export default function Home() {
           <div>
             <label
               htmlFor="password"
-              className="pb-2 text-sm font-normal text-slate-600"
+              className="pb-2 text-sm font-normal text-zinc-500"
             >
               Password
             </label>
