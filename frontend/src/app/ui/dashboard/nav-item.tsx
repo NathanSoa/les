@@ -13,14 +13,17 @@ export default function NavItem({ href, text, icon: Icon }: NavItemProps) {
   const { liClassName, iconClassName } = useTabStyle(href)
 
   return (
-    <li
+    <Link
+      href={href}
       className={clsx(
-        'flex w-full items-center justify-center gap-4 rounded-lg p-3 font-bold',
+        'w-full cursor-pointer gap-4 rounded-lg p-3 font-bold transition duration-200 hover:bg-blue-400',
         liClassName,
       )}
     >
-      <span className={clsx('text-3xl', iconClassName)}>{Icon}</span>
-      <Link href={href}>{text}</Link>
-    </li>
+      <li className="flex items-center justify-center gap-2">
+        <span className={clsx('text-3xl', iconClassName)}>{Icon}</span>
+        {text}
+      </li>
+    </Link>
   )
 }
