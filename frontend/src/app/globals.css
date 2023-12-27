@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .base-button {
+    @apply rounded-xl border px-10 py-3 font-semibold transition duration-300 ease-in-out
+  }
+}
