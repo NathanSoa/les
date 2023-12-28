@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="grid grid-cols-half">
-      <aside className="h-screen bg-gradient-to-b  from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
+      <aside className="h-screen bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
         <h1 className={clsx('p-10 font-medium', robotoSerif.className)}>
           MyCompany
         </h1>
-        <div className="mt-36 flex flex-col items-center">
+        <div className="flex flex-col items-center pt-48">
           <span className="pb-3 text-lg text-zinc-200">
             Nice to see you again
           </span>
