@@ -18,7 +18,7 @@ function TableHeader({ headers }: TableHeaderProps) {
     <thead className="border-b uppercase">
       <tr>
         {headers.map((header, index) => (
-          <th key={index} className="whitespace-nowrap bg-white p-2">
+          <th key={index} className="w-60 whitespace-nowrap bg-white p-2">
             {header}
           </th>
         ))}
@@ -32,20 +32,27 @@ function TableBody({ children }: { children: ReactNode }) {
   return <tbody>{children}</tbody>
 }
 
-function TableRow({ children }: { children: ReactNode }) {
+interface TableRowProps {
+  children: ReactNode
+  withActions?: boolean
+}
+
+function TableRow({ children, withActions = true }: TableRowProps) {
   return (
     <tr>
       {children}
-      <td className="whitespace-nowrap bg-white py-5">
-        <div className="flex justify-start gap-2">
-          <Button.Root className="border-green-500 text-green-500 hover:bg-green-600 hover:text-white">
-            <Button.Label label="Edit" />
-          </Button.Root>
-          <Button.Root className="border-red-500 text-red-500 hover:bg-red-700 hover:text-white">
-            <Button.Label label="Delete" />
-          </Button.Root>
-        </div>
-      </td>
+      {withActions && (
+        <td className="whitespace-nowrap bg-white py-5">
+          <div className="flex justify-start gap-2">
+            <Button.Root className="border-green-500 text-green-500 hover:bg-green-600 hover:text-white">
+              <Button.Label label="Edit" />
+            </Button.Root>
+            <Button.Root className="border-red-500 text-red-500 hover:bg-red-700 hover:text-white">
+              <Button.Label label="Delete" />
+            </Button.Root>
+          </div>
+        </td>
+      )}
     </tr>
   )
 }
