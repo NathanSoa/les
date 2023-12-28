@@ -1,5 +1,3 @@
-'use client'
-
 import { HTMLAttributes, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -9,7 +7,13 @@ interface ButtonRootProps extends HTMLAttributes<HTMLButtonElement> {
 
 function ButtonRoot(props: ButtonRootProps) {
   return (
-    <button {...props} className={twMerge('base-button', props.className)}>
+    <button
+      {...props}
+      className={twMerge(
+        'rounded-xl border px-10 py-3 font-semibold transition duration-300 ease-in-out',
+        props.className,
+      )}
+    >
       {props.children}
     </button>
   )
