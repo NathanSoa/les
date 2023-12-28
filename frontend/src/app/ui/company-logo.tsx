@@ -1,4 +1,4 @@
-import { AppleLogo } from 'phosphor-react'
+import { AppleLogo } from '@phosphor-icons/react/dist/ssr'
 
 interface CompanyLogoProps {
   size: number
