@@ -29,7 +29,7 @@ export default function Home() {
           <span className="pb-3 text-lg text-zinc-200">
             Nice to see you again
           </span>
-          <span className="flex flex-col items-center text-7xl">
+          <span className="flex flex-col items-center text-center text-7xl">
             WELCOME BACK
             <div className="mt-4 h-2 w-16 rounded-full bg-white" />
           </span>
