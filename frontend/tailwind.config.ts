@@ -11,6 +11,7 @@ const config: Config = {
       gridTemplateColumns: {
         app: 'minmax(16rem, 18rem) 1fr',
         half: '1fr 1fr',
+        'aligned-itens-3': '1fr 1fr 1fr',
       },
       colors: {
         'blue-theme': '#2d53da',
