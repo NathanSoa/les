@@ -8,10 +8,10 @@ export interface Address {
   neighborhood: string
   city: string
   state: string
-  country: string
+  country?: string
   zipCode: string
   alias: string
-  complement: string
+  complement?: string
 }
 
 export interface Card {
