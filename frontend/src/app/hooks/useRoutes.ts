@@ -1,7 +1,6 @@
 import { Airplay, Gear, HouseLine, User } from '@phosphor-icons/react'
-import { ElementType, useEffect, useState } from 'react'
+import { ElementType } from 'react'
 
-import { getRoutes } from '@/app/server/getRoutes'
 interface Route {
   path: string
   name: string
@@ -23,16 +22,16 @@ const IconData = {
   fallback: Airplay,
 }
 
+const routes: Route[] = [
+  { path: '/dashboard', name: 'Dashboard' },
+  { path: '/dashboard/customers', name: 'Customers' },
+  { path: '/dashboard/settings', name: 'Settings' },
+]
+
 const settingsAsLast = (a: Route, b: Route) =>
   a.name === 'Settings' ? 1 : b.name === 'Settings' ? -1 : 0
 
 export const useRoutes = (options?: Options): Path[] => {
-  const [routes, setRoutes] = useState<Route[]>([])
-
-  useEffect(() => {
-    getRoutes().then((data) => setRoutes(data))
-  }, [])
-
   return routes
     .sort(settingsAsLast)
     .filter((route) =>
