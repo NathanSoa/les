@@ -7,6 +7,8 @@ import {
 
 import { useState } from 'react'
 
+type PartialCard = Omit<Card, 'main'>
+
 export function useCustomer() {
   const [customer, setCustomer] = useState<Customer>(EmptyCustomer)
 
@@ -20,7 +22,7 @@ export function useCustomer() {
     })
   }
 
-  function addCard(card: Card) {
+  function addCard(card: PartialCard) {
     if (!customer) return
 
     setCustomer({
