@@ -27,11 +27,7 @@ import React, { useState } from 'react'
 import { z } from 'zod'
 import clsx from 'clsx'
 
-interface MainFormProps {
-  close: () => void
-}
-
-export default function CustomerCreateForm({ close }: MainFormProps) {
+export default function CustomerCreateForm() {
   const {
     customer,
     addAddress,
