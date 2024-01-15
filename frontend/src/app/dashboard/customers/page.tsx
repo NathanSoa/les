@@ -8,7 +8,7 @@ export default async function Page() {
     <div>
       <Customers.Header />
       <Suspense
-        fallback={<TableSkeleton headers={['Name', 'Email', 'Phone']} />}
+        fallback={<TableSkeleton headers={['Nome', 'Email', 'Telefone']} />}
       >
         <Customers.Table />
       </Suspense>

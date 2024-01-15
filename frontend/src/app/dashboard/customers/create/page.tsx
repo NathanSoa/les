@@ -8,17 +8,17 @@ export default function Page() {
     <>
       <Breadcrumb
         pages={[
-          { label: 'Home', href: '/dashboard' },
-          { label: 'Customers', href: '/dashboard/customers' },
+          { label: 'Ínicio', href: '/dashboard' },
+          { label: 'Clientes', href: '/dashboard/customers' },
           {
-            label: 'Create customer',
+            label: 'Adicionar novo',
             href: '/dashboard/customers/create',
             activePage: true,
           },
         ]}
       />
       <h1 className="pb-6 pt-2 text-4xl font-bold">Customers</h1>
-      <CustomerCreateForm close={() => console.log('a')} />
+      <CustomerCreateForm />
     </>
   )
 }

@@ -22,7 +22,7 @@ function TableHeader({ headers }: TableHeaderProps) {
             {header}
           </th>
         ))}
-        <th className="w-80 whitespace-nowrap bg-white p-2">Actions</th>
+        <th className="w-80 whitespace-nowrap bg-white p-2">Ações</th>
       </tr>
     </thead>
   )
@@ -45,10 +45,10 @@ function TableRow({ children, withActions = true }: TableRowProps) {
         <td className="whitespace-nowrap bg-white py-5">
           <div className="flex justify-start gap-2">
             <Button.Root className="border-green-500 text-green-500 hover:bg-green-600 hover:text-white">
-              <Button.Label label="Edit" />
+              <Button.Label label="Editar" />
             </Button.Root>
             <Button.Root className="border-red-500 text-red-500 hover:bg-red-700 hover:text-white">
-              <Button.Label label="Delete" />
+              <Button.Label label="Apagar" />
             </Button.Root>
           </div>
         </td>

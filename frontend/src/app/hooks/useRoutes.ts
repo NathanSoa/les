@@ -24,12 +24,12 @@ const IconData = {
 
 const routes: Route[] = [
   { path: '/dashboard', name: 'Dashboard' },
-  { path: '/dashboard/customers', name: 'Customers' },
-  { path: '/dashboard/settings', name: 'Settings' },
+  { path: '/dashboard/customers', name: 'Clientes' },
+  { path: '/dashboard/settings', name: 'Configurações' },
 ]
 
 const settingsAsLast = (a: Route, b: Route) =>
-  a.name === 'Settings' ? 1 : b.name === 'Settings' ? -1 : 0
+  a.name === 'Configurações' ? 1 : b.name === 'Configurações' ? -1 : 0
 
 export const useRoutes = (options?: Options): Path[] => {
   return routes

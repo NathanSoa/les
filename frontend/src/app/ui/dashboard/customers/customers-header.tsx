@@ -11,20 +11,20 @@ export default function CustomersHeader() {
     <>
       <Breadcrumb
         pages={[
-          { label: 'Home', href: '/dashboard' },
+          { label: 'Ínicio', href: '/dashboard' },
           {
-            label: 'Customers',
+            label: 'Clientes',
             href: '/dashboard/customers',
             activePage: true,
           },
         ]}
       />
       <div className="flex max-w-7xl justify-between">
-        <h1 className="pb-6 pt-2 text-4xl font-bold">Customers</h1>
+        <h1 className="pb-6 pt-2 text-4xl font-bold">Clientes</h1>
         <Link href="/dashboard/customers/create">
           <Button.Root className="m-2 flex items-center justify-center gap-2 border-blue-theme px-4 py-1 text-blue-theme hover:bg-blue-800 hover:text-white">
             <Button.Icon icon={<UserPlus size={32} />} />
-            <Button.Label label="Create customer" />
+            <Button.Label label="Criar cliente" />
           </Button.Root>
         </Link>
       </div>

@@ -37,7 +37,7 @@ export default async function CustomersTable() {
 
   return (
     <Table.Root>
-      <Table.Header headers={['Name', 'Email', 'Phone']} />
+      <Table.Header headers={['Nome', 'Email', 'Telefone']} />
       <Table.Body>
         {costumers.map((customer, index) => {
           const style = clsx(

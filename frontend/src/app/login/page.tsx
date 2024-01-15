@@ -27,16 +27,16 @@ export default function Home() {
         </h1>
         <div className="flex flex-col items-center pt-48">
           <span className="pb-3 text-lg text-zinc-200">
-            Nice to see you again
+            É bom te ver novamente
           </span>
           <span className="flex flex-col items-center text-center text-7xl">
-            WELCOME BACK
+            BEM-VINDO DE VOLTA
             <div className="mt-4 h-2 w-16 rounded-full bg-white" />
           </span>
         </div>
       </aside>
       <main className={'mx-auto px-10 pt-36 text-2xl font-bold text-sky-500'}>
-        <h1 className={clsx('text-center', roboto.className)}>Login Account</h1>
+        <h1 className={clsx('text-center', roboto.className)}>Login</h1>
         <FormLogin />
       </main>
     </div>
