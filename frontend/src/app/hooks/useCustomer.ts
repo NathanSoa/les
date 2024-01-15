@@ -13,6 +13,7 @@ export function useCustomer() {
   function addAddress(address: Address) {
     if (!customer) return
     address.country = 'Brasil'
+    address.complement = address.complement ?? ''
     setCustomer({
       ...customer,
       address: [...customer.address, address],
