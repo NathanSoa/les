@@ -7,7 +7,7 @@ import InputContainer from '@/app/ui/input-container'
 import InfoCard from '@/app/ui/info-card'
 import Modal from '@/app/ui/modal'
 import AddressForm from '@/app/ui/dashboard/customers/address-form'
-// import CardForm from '@/app/ui/customer/card-form'
+import CardForm from '@/app/ui/dashboard/customers/card-form'
 import Form from '@/app/ui/form'
 
 import { env } from '@/app/config/environment'
@@ -275,11 +275,11 @@ export default function CustomerCreateForm({ close }: MainFormProps) {
         </Modal>
       )}
 
-      {/* {showCardModal && (
+      {showCardModal && (
         <Modal onHide={closeCardModal} title="Adicionar Cartão">
           <CardForm addCard={addCard} close={closeCardModal} />
         </Modal>
-      )} */}
+      )}
     </Form>
   )
 }
