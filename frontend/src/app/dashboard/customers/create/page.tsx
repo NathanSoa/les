@@ -1,6 +1,6 @@
 'use client'
 
-import Breadcrumb from '@/app/ui/breadcrumb'
+import Breadcrumb from '@/app/ui/common/breadcrumb'
 import CustomerCreateForm from '@/app/ui/dashboard/customers/create-form'
 
 export default function Page() {

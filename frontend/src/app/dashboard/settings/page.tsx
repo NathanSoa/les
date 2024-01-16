@@ -1,4 +1,4 @@
-import Breadcrumb from '@/app/ui/breadcrumb'
+import Breadcrumb from '@/app/ui/common/breadcrumb'
 
 export default function Page() {
   return (

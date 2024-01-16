@@ -1,6 +1,6 @@
 'use client'
 
-import CompanyLogo from '@/app/ui/company-logo'
+import CompanyLogo from '@/app/ui/common/company-logo'
 import NavItems from '@/app/ui/dashboard/nav-items'
 
 export default function SideNav() {

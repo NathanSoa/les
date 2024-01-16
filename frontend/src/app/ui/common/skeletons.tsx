@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge'
-import Table from '@/app/ui/table'
+import Table from '@/app/ui/common/table'
 
 function TableRowSkeleton() {
   const cellClassName = 'whitespace-nowrap px-2 py-5 max-w-min'

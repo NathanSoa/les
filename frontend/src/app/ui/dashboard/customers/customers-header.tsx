@@ -1,7 +1,7 @@
 'use client'
 
-import Breadcrumb from '@/app/ui/breadcrumb'
-import Button from '@/app/ui/button'
+import Breadcrumb from '@/app/ui/common/breadcrumb'
+import Button from '@/app/ui/common/button'
 
 import { UserPlus } from '@phosphor-icons/react'
 import Link from 'next/link'

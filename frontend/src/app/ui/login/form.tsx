@@ -1,6 +1,6 @@
 'use client'
 
-import Button from '@/app/ui/button'
+import Button from '@/app/ui/common/button'
 
 export default function FormLogin() {
   return (

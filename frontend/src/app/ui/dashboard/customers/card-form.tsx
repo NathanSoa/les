@@ -1,11 +1,11 @@
 'use client'
 
-import Button from '@/app/ui/button'
-import Input from '@/app/ui/input'
-import InputContainer from '@/app/ui/input-container'
-import AlignedInputs from '@/app/ui/aligned-inputs'
-import Form from '@/app/ui/form'
-import SelectInput from '@/app/ui/select-input'
+import Button from '@/app/ui/common/button'
+import Input from '@/app/ui/common/input'
+import InputContainer from '@/app/ui/common/input-container'
+import AlignedInputs from '@/app/ui/common/aligned-inputs'
+import Form from '@/app/ui/common/form'
+import SelectInput from '@/app/ui/common/select-input'
 
 import { useCard } from '@/app/hooks/useCard'
 import { useNormalizer } from '@/app/hooks/useNormalizer'

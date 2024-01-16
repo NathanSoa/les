@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import Table from '@/app/ui/table'
+import Table from '@/app/ui/common/table'
 import { useRandomColor } from '@/app/hooks/useRandomColor'
 
 const dbCustomers = [

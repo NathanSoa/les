@@ -1,5 +1,5 @@
 import Customers from '@/app/ui/dashboard/customers'
-import TableSkeleton from '@/app/ui/skeletons'
+import TableSkeleton from '@/app/ui/common/skeletons'
 
 import { Suspense } from 'react'
 

@@ -1,14 +1,14 @@
 'use client'
 
-import Button from '@/app/ui/button'
-import AlignedInputs from '@/app/ui/aligned-inputs'
-import Input from '@/app/ui/input'
-import InputContainer from '@/app/ui/input-container'
-import InfoCard from '@/app/ui/info-card'
-import Modal from '@/app/ui/modal'
+import Button from '@/app/ui/common/button'
+import AlignedInputs from '@/app/ui/common/aligned-inputs'
+import Input from '@/app/ui/common/input'
+import InputContainer from '@/app/ui/common/input-container'
+import InfoCard from '@/app/ui/common/info-card'
+import Modal from '@/app/ui/common/modal'
 import AddressForm from '@/app/ui/dashboard/customers/address-form'
 import CardForm from '@/app/ui/dashboard/customers/card-form'
-import Form from '@/app/ui/form'
+import Form from '@/app/ui/common/form'
 
 import { env } from '@/app/config/environment'
 
