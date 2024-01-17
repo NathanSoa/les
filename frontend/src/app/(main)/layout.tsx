@@ -5,10 +5,15 @@ import IconWithText from '@/app/ui/main/Icon'
 import { Heart, List, ShoppingCart, User } from '@phosphor-icons/react/dist/ssr'
 import { Roboto_Condensed as RobotoCondensed } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
+import Link from 'next/link'
+import { ReactNode } from 'react'
 
 const roboto = RobotoCondensed({ subsets: ['latin'], weight: '700' })
 
-export default function Home() {
+type LayoutProps = {
+  children: ReactNode
+}
+export default function RootLayout({ children }: LayoutProps) {
   const getHexColor = useTailwindColor()
 
   return (
@@ -49,13 +54,13 @@ export default function Home() {
               Categorias
             </li>
             <li className="text-lg font-semibold text-gray-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-gray-700">
-              Ofertas
+              <Link href="deals">Ofertas</Link>
             </li>
             <li className="text-lg font-semibold text-gray-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-gray-700">
-              Mais vendidos
+              <Link href="bestsellers">Mais vendidos</Link>
             </li>
             <li className="text-lg font-semibold text-gray-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-gray-700">
-              Contato
+              <Link href="contact">Contato</Link>
             </li>
           </ul>
           <span
@@ -68,6 +73,7 @@ export default function Home() {
           </span>
         </nav>
       </header>
+      {children}
     </div>
   )
 }
