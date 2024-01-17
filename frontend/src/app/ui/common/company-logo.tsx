@@ -1,9 +1,8 @@
+import { IconProps } from '@phosphor-icons/react'
 import { AppleLogo } from '@phosphor-icons/react/dist/ssr'
 
-interface CompanyLogoProps {
-  size: number
-}
+type CompanyLogoProps = IconProps
 
-export default function CompanyLogo({ size }: CompanyLogoProps) {
-  return <AppleLogo size={size} className="text-blue-theme-light" />
+export default function CompanyLogo(props: CompanyLogoProps) {
+  return <AppleLogo {...props} className="text-blue-theme-light" />
 }
