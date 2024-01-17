@@ -2,38 +2,71 @@ import CompanyLogo from '@/app/ui/common/company-logo'
 import useTailwindColor from '@/app/hooks/useTailwindColor'
 import IconWithText from '@/app/ui/main/Icon'
 
-import { Heart, ShoppingCart, User } from '@phosphor-icons/react/dist/ssr'
+import { Heart, List, ShoppingCart, User } from '@phosphor-icons/react/dist/ssr'
+import { Roboto_Condensed as RobotoCondensed } from 'next/font/google'
+import { twMerge } from 'tailwind-merge'
+
+const roboto = RobotoCondensed({ subsets: ['latin'], weight: '700' })
 
 export default function Home() {
   const getHexColor = useTailwindColor()
 
   return (
     <div className="mx-52 mt-8">
-      <header className="flex justify-between border-b-2 py-5">
-        <span className="flex items-center gap-1">
-          <CompanyLogo size={40} />
-          <span className="font-semibold text-blue-theme">MyCompany</span>
-        </span>
-        <div className="flex gap-8">
-          <IconWithText
-            color={getHexColor('gray-500')}
-            icon={User}
-            text="Perfil"
-            colorHoverTo="gray"
-          />
-          <IconWithText
-            color={getHexColor('gray-500')}
-            icon={Heart}
-            text="Favoritos"
-            colorHoverTo="gray"
-          />
-          <IconWithText
-            color={getHexColor('gray-500')}
-            icon={ShoppingCart}
-            text="Carrinho"
-            colorHoverTo="gray"
-          />
+      <header>
+        <div className="flex justify-between border-b-2 py-5">
+          <span className="flex items-center gap-1">
+            <CompanyLogo size={54} />
+            <span className="text-xl font-semibold text-blue-theme">
+              MyCompany
+            </span>
+          </span>
+          <div className="flex gap-8">
+            <IconWithText
+              color={getHexColor('gray-500')}
+              icon={User}
+              text="Perfil"
+              colorHoverTo="gray"
+            />
+            <IconWithText
+              color={getHexColor('gray-500')}
+              icon={Heart}
+              text="Favoritos"
+              colorHoverTo="gray"
+            />
+            <IconWithText
+              color={getHexColor('gray-500')}
+              icon={ShoppingCart}
+              text="Carrinho"
+              colorHoverTo="gray"
+            />
+          </div>
         </div>
+        <nav className="flex items-center justify-between pt-6">
+          <ul className="flex gap-8">
+            <li className="flex items-center gap-2 text-lg font-semibold text-gray-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-gray-700">
+              <List size={20} weight="fill" />
+              Categorias
+            </li>
+            <li className="text-lg font-semibold text-gray-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-gray-700">
+              Ofertas
+            </li>
+            <li className="text-lg font-semibold text-gray-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-gray-700">
+              Mais vendidos
+            </li>
+            <li className="text-lg font-semibold text-gray-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-gray-700">
+              Contato
+            </li>
+          </ul>
+          <span
+            className={twMerge(
+              roboto.className,
+              'text-2xl font-bold text-gray-800',
+            )}
+          >
+            Tudo o que você precisa em um só lugar!
+          </span>
+        </nav>
       </header>
     </div>
   )
