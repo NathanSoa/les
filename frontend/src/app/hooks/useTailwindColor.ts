@@ -12,11 +12,11 @@ const colors = {
 }
 
 const useTailwindColor = () => {
-  const getColor = (color: keyof typeof colors) => {
+  const getHexColor = (color: keyof typeof colors) => {
     return colors[color]
   }
 
-  return getColor
+  return getHexColor
 }
 
 export default useTailwindColor
