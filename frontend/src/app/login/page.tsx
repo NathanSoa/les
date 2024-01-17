@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Roboto_Serif as RobotoSerif, Roboto } from 'next/font/google'
 
 import FormLogin from '@/app/ui/login/form'
+import CompanyLogo from '../ui/common/company-logo'
 
 const robotoSerif = RobotoSerif({
   weight: '500',
@@ -22,8 +23,14 @@ export default function Home() {
   return (
     <div className="grid grid-cols-half">
       <aside className="h-screen bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
-        <h1 className={clsx('p-10 font-medium', robotoSerif.className)}>
-          MyCompany
+        <h1
+          className={clsx(
+            'flex items-center gap-3 p-10 font-medium',
+            robotoSerif.className,
+          )}
+        >
+          <CompanyLogo size={54} className="text-indigo-800" />
+          <span className="text-xl">MyCompany</span>
         </h1>
         <div className="flex flex-col items-center pt-48">
           <span className="pb-3 text-lg text-zinc-200">
