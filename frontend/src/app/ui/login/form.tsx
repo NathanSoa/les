@@ -39,7 +39,7 @@ export default function FormLogin() {
             className="w-full bg-transparent pl-3 text-slate-600 outline-none placeholder:font-medium"
           />
         </div>
-        <div className="pt-2 text-right font-medium text-slate-500 hover:cursor-pointer hover:text-indigo-500">
+        <div className="pt-2 text-right font-medium text-slate-500 transition duration-300 ease-in-out hover:cursor-pointer hover:text-indigo-500">
           Esqueci minha senha
         </div>
       </div>

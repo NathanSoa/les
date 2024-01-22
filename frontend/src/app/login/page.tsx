@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 import { Metadata } from 'next'
 import { Roboto_Serif as RobotoSerif } from 'next/font/google'
+import Link from 'next/link'
 
 import FormLogin from '@/app/ui/login/form'
 import CompanyLogo from '@/app/ui/common/company-logo'
-import GoogleButton from '../ui/login/google-button'
-import Link from 'next/link'
+import GoogleButton from '@/app/ui/login/google-button'
 
 const robotoSerif = RobotoSerif({
   weight: '500',
@@ -37,7 +37,10 @@ export default function Home() {
         <GoogleButton />
         <div className="pt-16 text-center font-medium text-slate-600">
           Ainda não possui uma conta?{' '}
-          <Link href="register" className="font-bold text-indigo-500">
+          <Link
+            href="register"
+            className="font-bold text-indigo-500 transition duration-300 ease-in-out hover:text-indigo-700"
+          >
             Cadastre-se aqui.
           </Link>
         </div>
