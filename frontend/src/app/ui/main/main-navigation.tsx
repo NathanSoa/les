@@ -28,7 +28,7 @@ export default function MainNavigation() {
         <header>
           <div className="flex justify-between border-b-2 py-5">
             <span className="flex items-center gap-1">
-              <CompanyLogo size={54} />
+              <CompanyLogo size={54} className="text-blue-theme" />
               <span className="text-xl font-semibold text-blue-theme">
                 MyCompany
               </span>

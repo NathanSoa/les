@@ -86,7 +86,7 @@ export default function FormRegister() {
           <input
             type="password"
             id="passwordConfirm"
-            placeholder="Senha"
+            placeholder="Confirme a senha"
             className="w-full bg-transparent pl-3 text-slate-600 outline-none placeholder:font-medium"
           />
         </div>
