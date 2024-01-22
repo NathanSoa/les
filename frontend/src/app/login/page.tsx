@@ -1,17 +1,14 @@
 import clsx from 'clsx'
 import { Metadata } from 'next'
-import { Roboto_Serif as RobotoSerif, Roboto } from 'next/font/google'
+import { Roboto_Serif as RobotoSerif } from 'next/font/google'
 
 import FormLogin from '@/app/ui/login/form'
-import CompanyLogo from '../ui/common/company-logo'
+import CompanyLogo from '@/app/ui/common/company-logo'
+import GoogleButton from '../ui/login/google-button'
+import Link from 'next/link'
 
 const robotoSerif = RobotoSerif({
   weight: '500',
-  subsets: ['latin'],
-})
-
-const roboto = Roboto({
-  weight: '700',
   subsets: ['latin'],
 })
 
@@ -21,18 +18,33 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-half">
-      <aside className="h-screen bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
+    <div className="grid-cols-login grid">
+      <main className={'mx-16 pt-16 font-bold'}>
         <h1
           className={clsx(
-            'flex items-center gap-3 p-10 font-medium',
+            'flex items-center gap-3 font-medium',
             robotoSerif.className,
           )}
         >
-          <CompanyLogo size={54} className="text-indigo-800" />
-          <span className="text-xl">MyCompany</span>
+          <CompanyLogo size={80} className="text-indigo-800" />
+          <span className="text-3xl text-indigo-800">MyCompany</span>
         </h1>
-        <div className="flex flex-col items-center pt-48">
+        <span className="font-medium text-slate-400">
+          Tudo que você precisa num só site
+        </span>
+        <FormLogin />
+        <Divisor />
+        <GoogleButton />
+        <div className="pt-16 text-center font-medium text-slate-600">
+          Ainda não possui uma conta?{' '}
+          <Link href="register" className="font-bold text-indigo-500">
+            Cadastre-se aqui.
+          </Link>
+        </div>
+      </main>
+
+      <aside className="h-screen bg-gradient-to-b from-sky-400 via-blue-600 to-indigo-800 text-zinc-50">
+        <div className="flex flex-col items-center pt-80">
           <span className="pb-3 text-lg text-zinc-200">
             É bom te ver novamente
           </span>
@@ -42,10 +54,16 @@ export default function Home() {
           </span>
         </div>
       </aside>
-      <main className={'mx-auto px-10 pt-36 text-2xl font-bold text-sky-500'}>
-        <h1 className={clsx('text-center', roboto.className)}>Login</h1>
-        <FormLogin />
-      </main>
+    </div>
+  )
+}
+
+function Divisor() {
+  return (
+    <div className="flex items-center gap-2 py-12">
+      <div className="h-0.5 w-full bg-slate-400" />
+      <div className="text-slate-400">ou</div>
+      <div className="h-0.5 w-full bg-slate-400" />
     </div>
   )
 }
