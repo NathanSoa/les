@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       gridTemplateColumns: {
         app: 'minmax(16rem, 18rem) 1fr',
+        login: '44rem 1fr',
         half: '1fr 1fr',
         'aligned-itens-3': '1fr 1fr 1fr',
       },
