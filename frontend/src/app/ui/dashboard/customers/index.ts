@@ -1,5 +1,5 @@
 import CustomersHeader from './customers-header'
-import CustomersTable from './customers-table'
+import CustomersTable from './table/model-view'
 
 const Customers = {
   Table: CustomersTable,
