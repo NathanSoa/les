@@ -2,6 +2,8 @@ import { UserCircle, X } from '@phosphor-icons/react/dist/ssr'
 import clsx from 'clsx'
 import Link from 'next/link'
 
+import BestsellerLink from '@/app/ui/main/bestseller-link'
+
 interface CategoriesSidebarProps {
   isOpen: boolean
   onClose: () => void
@@ -37,6 +39,20 @@ export default function CategoriesSidebar({
           </Link>
           <X size={40} onClick={onClose} className="hover:cursor-pointer" />
         </div>
+        <nav>
+          <div className="px-5 pb-2 pt-6 text-2xl font-bold">Destaques</div>
+          <ul className="flex flex-col gap-6 p-5 text-xl">
+            <BestsellerLink product={'IPhone 14'} closeSidebar={onClose} />
+            <BestsellerLink product={'IPhone 14 Plus'} closeSidebar={onClose} />
+            <BestsellerLink product={'IPhone 15'} closeSidebar={onClose} />
+            <BestsellerLink product={'IPhone 15 Plus'} closeSidebar={onClose} />
+            <BestsellerLink product={'IPhone 15 Pro'} closeSidebar={onClose} />
+            <BestsellerLink
+              product={'IPhone 15 Pro Max'}
+              closeSidebar={onClose}
+            />
+          </ul>
+        </nav>
       </div>
     </>
   )
