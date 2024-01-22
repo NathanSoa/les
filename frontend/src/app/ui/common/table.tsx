@@ -1,5 +1,12 @@
+'use client'
+
 import { ReactNode } from 'react'
-import Button from './button'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+import Button from '@/app/ui/common/button'
+
+import useTailwindColor from '@/app/hooks/useTailwindColor'
 
 function TableRoot({ children }: { children: ReactNode }) {
   return (
@@ -38,6 +45,33 @@ interface TableRowProps {
 }
 
 function TableRow({ children, withActions = true }: TableRowProps) {
+  const getHexColor = useTailwindColor()
+
+  const showSwal = () => {
+    withReactContent(Swal)
+      .fire({
+        title: 'Você tem certeza?',
+        text: 'Após confirmação, esta ação é irreversível!',
+        icon: 'question',
+        showCancelButton: true,
+        cancelButtonColor: getHexColor('blue-500'),
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: getHexColor('red-500'),
+        confirmButtonText: 'Apagar',
+      })
+      .then((data) => {
+        if (data.isConfirmed) {
+          Swal.fire({
+            title: 'Apagado!',
+            text: 'O cliente foi apagado com sucesso.',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1500,
+          })
+        }
+      })
+  }
+
   return (
     <tr>
       {children}
@@ -47,7 +81,10 @@ function TableRow({ children, withActions = true }: TableRowProps) {
             <Button.Root className="border-green-500 text-green-500 hover:bg-green-600 hover:text-white">
               <Button.Label label="Editar" />
             </Button.Root>
-            <Button.Root className="border-red-500 text-red-500 hover:bg-red-700 hover:text-white">
+            <Button.Root
+              className="border-red-500 text-red-500 hover:bg-red-700 hover:text-white"
+              onClick={showSwal}
+            >
               <Button.Label label="Apagar" />
             </Button.Root>
           </div>
