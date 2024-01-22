@@ -49,11 +49,19 @@ export function useNormalizer() {
       .replace(/(-\d{2})\d+?$/, '$1')
   }
 
+  const toKebabCase = (value: string) => {
+    return value
+      .replace(/([a-z])([A-Z])/g, '$1-$2')
+      .replace(/\s+/g, '-')
+      .toLowerCase()
+  }
+
   return {
     normalizeCep,
     normalizeCardNumber,
     normalizePhoneNumber,
     normalizeDate,
     normalizeCpf,
+    toKebabCase,
   }
 }
