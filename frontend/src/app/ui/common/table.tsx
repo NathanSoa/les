@@ -54,7 +54,7 @@ function TableRow({ children, withActions = true }: TableRowProps) {
         text: 'Após confirmação, esta ação é irreversível!',
         icon: 'question',
         showCancelButton: true,
-        cancelButtonColor: getHexColor('blue-500'),
+        cancelButtonColor: getHexColor('gray-300'),
         cancelButtonText: 'Cancelar',
         confirmButtonColor: getHexColor('red-500'),
         confirmButtonText: 'Apagar',

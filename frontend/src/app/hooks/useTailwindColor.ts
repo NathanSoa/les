@@ -7,6 +7,7 @@ const colors = {
   'pink-500': '#EC4899',
   'purple-500': '#8B5CF6',
   'gray-500': '#6B7280',
+  'gray-300': '#d1d5db',
   white: '#FFFFFF',
   black: '#000000',
 }
